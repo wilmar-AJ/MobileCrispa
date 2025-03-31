@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 using ApiWoman.Models;
 using ApiWoman.Services.Interfaces;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -16,19 +17,21 @@ namespace ApiWoman.ViewModels
         public MainViewModel(IApiService apiService)
         {
             _apiService = apiService;
+            NextAsyncCommand = new AsyncRelayCommand(NextAsync);
         }
+        public ICommand NextAsyncCommand { get; }
 
         [RelayCommand]
         public async Task LoadUsersAsync()
         {
-            var users = await _apiService.GetFemaleUsersAsync();
+            var users = await _apiService.GetWomenUsersAsync();
             Users = new ObservableCollection<UserModel>(users);
         }
 
         [RelayCommand]
         public async Task NextAsync()
         {
-            await Shell.Current.GoToAsync("UsersPage", true);
+            await Shell.Current.GoToAsync("users");
         }
     }
 }

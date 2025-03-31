@@ -1,35 +1,28 @@
+using System.Net.Http.Json;
 using System.Text.Json;
 using ApiWoman.Models;
 using ApiWoman.Services.Interfaces;
 
-namespace ApiWoman.Services
-{
+namespace ApiWoman.Services;
+
     public class ApiService : IApiService
     {
+
         private readonly HttpClient _httpClient = new();
 
-       public async Task<List<UserModel>> GetFemaleUsersAsync()
+        public async Task<List<UserModel>> GetWomenUsersAsync()
         {
-            string url = "https://randomuser.me/api/?results=10&gender=female";
-            var response = await _httpClient.GetStringAsync(url);
+            var response = await _httpClient.GetFromJsonAsync<ApiResponse>("https://randomuser.me/api/?results=50&gender=female");
 
-            var json = JsonDocument.Parse(response);
-            var users = new List<UserModel>();
-
-            foreach (var user in json.RootElement.GetProperty("results").EnumerateArray())
+            return response?.Results.Select(u => new UserModel
             {
-                users.Add(new UserModel
-                {
-                    FullName = $"{user.GetProperty("name").GetProperty("first").GetString() ?? ""} {user.GetProperty("name").GetProperty("last").GetString() ?? ""}",
-                    Age = user.GetProperty("dob").GetProperty("age").GetInt32(),
-                    Email = user.GetProperty("email").GetString() ?? "No disponible",
-                    Gender = user.GetProperty("gender").GetString() ?? "Desconocido",
-                    ProfilePicture = user.GetProperty("picture").GetProperty("large").GetString() ?? "default_profile.png"
-                });
-            }
-
-            return users;
+                FullName = $"{u.Name.First} {u.Name.Last}",
+                Age = u.Dob.Age,
+                Email = u.Email,
+                Gender = u.Gender,
+                ProfilePicture = u.Picture.Large 
+            }).ToList() ?? new List<UserModel>();
         }
 
     }
-}
+

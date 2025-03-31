@@ -4,6 +4,6 @@ using ApiWoman.Models;
 namespace ApiWoman.Services.Interfaces;
 
 public interface IApiService
-{
-    Task<List<UserModel>> GetFemaleUsersAsync();
+{ 
+    Task<List<UserModel>> GetWomenUsersAsync();
 }

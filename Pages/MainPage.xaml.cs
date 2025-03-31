@@ -1,7 +1,7 @@
-﻿using ApiWoman.Pages;
+﻿
 using ApiWoman.ViewModels;
 
-namespace ApiWoman;
+namespace ApiWoman.Pages;
 
 public partial class MainPage : ContentPage
 {
@@ -10,8 +10,9 @@ public partial class MainPage : ContentPage
 	public MainPage(MainViewModel vm)
 	{
 		InitializeComponent();
-		AnimateElements();
 		BindingContext = vm;
+		AnimateElements();
+		
 	}
 
 	private async void AnimateElements()
