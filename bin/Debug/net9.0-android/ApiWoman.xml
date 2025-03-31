@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiWoman</name>
+    </assembly>
+    <members>
+        <member name="T:ApiWoman.ViewModels.MainViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:ApiWoman.ViewModels.MainViewModel.Users">
+            <inheritdoc cref="F:ApiWoman.ViewModels.MainViewModel._users"/>
+        </member>
+        <member name="F:ApiWoman.ViewModels.MainViewModel.loadUsersCommand">
+            <summary>The backing field for <see cref="P:ApiWoman.ViewModels.MainViewModel.LoadUsersCommand"/>.</summary>
+        </member>
+        <member name="P:ApiWoman.ViewModels.MainViewModel.LoadUsersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ApiWoman.ViewModels.MainViewModel.LoadUsersAsync"/>.</summary>
+        </member>
+        <member name="F:ApiWoman.ViewModels.MainViewModel.nextCommand">
+            <summary>The backing field for <see cref="P:ApiWoman.ViewModels.MainViewModel.NextCommand"/>.</summary>
+        </member>
+        <member name="P:ApiWoman.ViewModels.MainViewModel.NextCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ApiWoman.ViewModels.MainViewModel.NextAsync"/>.</summary>
+        </member>
+        <member name="T:ApiWoman.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Users">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Users" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Users">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Users" generated properties.</summary>
+        </member>
+    </members>
+</doc>

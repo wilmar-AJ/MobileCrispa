@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ApiWoman.MainPage"
+             BackgroundImageSource="img1.jpg">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                         
+        <Image Source="logo.jpg" WidthRequest="120" HeightRequest="120"
+               Opacity="0" x:Name="LogoImage"/>
+
+               
+
+        <Label Text="Bienvenido a ApiWoman"
+               FontSize="40"
+               FontAttributes="Bold"
+               TextColor="#FF4081"
+               Opacity="0"
+               x:Name="TitleLabel"
+               HorizontalOptions="Center"/>
+        
+        <Label Text="Descubre perfiles de mujeres al instante."
+               FontSize="28"
+               TextColor="#FF4081"
+               Opacity="0"
+               x:Name="SubtitleLabel"
+               HorizontalOptions="Center"/>
+        
+        <Button Text="Empezar" 
+                BackgroundColor="#0077B6"
+                TextColor="#FFD700"
+                CornerRadius="25"
+                Padding="10"
+                WidthRequest="180"
+                Opacity="0"
+                x:Name="StartButton"
+                Command="{Binding NextAsyncCommand}"/>
+    </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
